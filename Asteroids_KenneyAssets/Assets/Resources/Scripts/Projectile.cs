@@ -6,9 +6,14 @@ public class Projectile : MonoBehaviour {
 
     Rigidbody2D rb;
     float speed;
+    int damageValue;
+    public void SetDamageValue(int value) {
+        damageValue = value;
+    }
+    public int GetDamageValue() { return damageValue; }
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
-        speed = 5.0f; // we'll set this up in the player class
+        speed = 40.0f; // we'll set this up in the player class
     }
     // Use this for initialization
     void Start () {

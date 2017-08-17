@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 
     public GameObject projectile;
     public Transform bulletSpawnLocation;
+
+    public int damage; // change this up when we have customizeable weapons
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
 
@@ -24,7 +26,9 @@ public class Player : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+
         Physics2D.IgnoreLayerCollision(8, 9); // Change for later
+        Physics2D.IgnoreLayerCollision(8, 8);
 	}
 	
 	// Update is called once per frame
@@ -49,8 +53,9 @@ public class Player : MonoBehaviour {
     }
     void FireBullets() {
         Vector3 relativePos = bulletSpawnLocation.position + transform.position; // bulletspawnPosition relative to parent;
-        Instantiate(projectile, relativePos, transform.rotation);
-        
+        GameObject clone = Instantiate(projectile, relativePos, transform.rotation);
+        clone.GetComponent<Projectile>().SetDamageValue(damage);
+        DestroyObject(clone, 5.0f); // change this up when we have customizeable weapons
     }
     //used for follow camera
     private void LateUpdate() {
