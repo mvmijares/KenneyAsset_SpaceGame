@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IDestructable, IHitable {
 
     Rigidbody2D rb;
 
@@ -62,6 +62,12 @@ public class Player : MonoBehaviour {
         
     }
 
+    public void OnHit() {
+
+    }
+    public void OnDestruction() {
+
+    }
     void DebugFunction() {
         if (debugCondition)
             Debug.Log("Vertical " + vertical + " " + "Horizontal" + horizontal);

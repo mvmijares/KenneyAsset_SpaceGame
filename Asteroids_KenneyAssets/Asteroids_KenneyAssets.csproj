@@ -80,7 +80,10 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Resources\Scripts\AsteroidCollider.cs" />
+    <Compile Include="Assets\Resources\Scripts\Debris.cs" />
+    <Compile Include="Assets\Resources\Scripts\Destruction.cs" />
     <Compile Include="Assets\Resources\Scripts\Health.cs" />
+    <Compile Include="Assets\Resources\Scripts\Interfaces.cs" />
     <Compile Include="Assets\Resources\Scripts\Player.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerCollider.cs" />
     <Compile Include="Assets\Resources\Scripts\Projectile.cs" />
